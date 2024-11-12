@@ -15,7 +15,7 @@ The stats are exposed as an API as well as exported report (in XML format)
 ## API Usage
 
 ```python
-import ca-python-stats as st
+import java_stats as st
 
 stats = JavaStats("path/to/repo")
 
