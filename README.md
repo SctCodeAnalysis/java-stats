@@ -1,16 +1,9 @@
-# Java Project Statistics
-
-Forms project statistics based on Java files within repository.
-Provides API for getting stats as well as export into common project model.
-
-The statistics include:
-- number of (.java) files
-- number of classes (total; per file)
-- avg number of methods within a class
-- avg/max length of a method (in LoC)
-
 # Java Project Model
 
+Forms project model based on Java files within repository.
+Provides API for traversing the model as well as export in common format (TBP).
+
+The model for Java looks like below:
 ```
 folder
  |- .java file (LoC)
