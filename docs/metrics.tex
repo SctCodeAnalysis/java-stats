@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\begin{document}
+
+\section{Code Quality Metrics Overview}
+\subsection{Number of Java Files}
+The number of Java files in a project provides an initial indication of the size and complexity of a project.
+
+
+\subsection{Number of Classes}
+The number of classes is a crucial metric as it can indicate the structural complexity of the Java codebase.
+
+\subsection{Average and Maximum Number of Methods per Class}
+This metric measures the number of methods within a class.  A high maximum number of methods in a class may be indicative of a "God class," which is considered as anti-pattern in software engineering.
+
+\subsection{Average and Maximum Method Size (in Lines of Code)}
+The method size refers to the number of lines of code within a method. Larger methods can be harder to understand and maintain. 
+
+\subsection{Average and Maximum Cyclomatic Complexity of Methods}
+Cyclomatic complexity is a metric used to measure the complexity of a method based on its control flow. The formula for cyclomatic complexity \( V(G) \) is:
+
+\[
+V(G) = E - N + 2P
+\]
+
+where:
+\begin{itemize}
+    \item \( E \) is the number of edges in the control flow graph of the program,
+    \item \( N \) is the number of nodes in the control flow graph,
+    \item \( P \) is the number of connected components in the graph.
+
+\end{itemize}
+
+The concept of cyclomatic complexity was introduced by T.J. McCabe in his 1976 paper titled \textit{"A Complexity Measure"} \cite{mccabe1976complexity}, where he developed the theory and mathematical foundation for this metric. 
+
+\subsection{Percent of Code Duplication}
+The metric is the ratio of the number of duplicate lines of code to the total number of lines of code. Code duplication measures the amount of duplicated code across the system. Duplicate code can lead to maintenance problems, as updates may need to be made in multiple places.
+
+
+\begin{thebibliography}{9}
+    \bibitem{mccabe1976complexity}
+    T.J. McCabe, \textit{A Complexity Measure}, IEEE Transactions on Software Engineering, 1976, \url{https://ieeexplore.ieee.org/document/1702388}.
+\end{thebibliography}
+
+\end{document}
