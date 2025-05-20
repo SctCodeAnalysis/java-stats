@@ -1,4 +1,4 @@
-""" Entry point for the Java Stats CLI. """
+"""Entry point for the Java Stats CLI."""
 
 import click
 from src.stats import JavaStats
