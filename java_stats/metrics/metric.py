@@ -3,7 +3,8 @@ Base class for all metrics.
 """
 
 from typing import List
-from src.parser import ParsedFile
+
+from ..parser import ParsedFile
 
 
 class Metric:

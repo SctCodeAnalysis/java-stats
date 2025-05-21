@@ -1,10 +1,13 @@
 """
-Module for calculating average number of methods per class.
+Class for calculating average number of methods per class.
 """
 
+from typing import List
+
 import javalang
-from src.metrics.metric import Metric
-from src.parser import ParsedFile
+
+from ..parser import ParsedFile
+from .metric import Metric
 
 
 class AverageNumberOfMethodsPerClass(Metric):
@@ -16,10 +19,7 @@ class AverageNumberOfMethodsPerClass(Metric):
         self.total_methods = 0
         self.total_classes = 0
 
-    def compute(self, files: list[ParsedFile]):
-        """
-        Calculate the average number of methods per class.
-        """
+    def compute(self, files: List[ParsedFile]):
         for file in files:
             for class_decl in file.structure.filter(javalang.tree.ClassDeclaration):
                 class_node = class_decl[1]
@@ -27,9 +27,6 @@ class AverageNumberOfMethodsPerClass(Metric):
                 self.total_classes += 1
 
     def result(self) -> float:
-        """
-        Return the average number of methods per class.
-        """
         if self.total_classes == 0:
             return 0.0
         return self.total_methods / self.total_classes

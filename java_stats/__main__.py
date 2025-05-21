@@ -1,7 +1,8 @@
 """Entry point for the Java Stats CLI."""
 
 import click
-from src.stats import JavaStats
+
+from java_stats import JavaStats
 
 
 @click.command()

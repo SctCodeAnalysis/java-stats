@@ -4,17 +4,15 @@ Class for calculating Java metrics.
 
 import xml.etree.ElementTree as ET
 from datetime import datetime
-from pathlib import Path
 
-from src.parser import ParsedFile
-from src.metrics.number_of_files import NumberOfJavaFiles
-from src.metrics.number_of_classes import NumberOfClasses
-from src.metrics.average_number_of_methods_per_class import (
-    AverageNumberOfMethodsPerClass,
-)
-from src.metrics.maximum_number_of_methods_per_class import (
-    MaximumNumberOfMethodsPerClass,
-)
+from java_stats.metrics import (AverageCyclomaticComplexity,
+                                AverageDepthOfInheritance, AverageLinesOfCode,
+                                AverageNumberOfMethodsPerClass,
+                                MaximumCyclomaticComplexity,
+                                MaximumDepthOfInheritance, MaximumLinesOfCode,
+                                MaximumNumberOfMethodsPerClass,
+                                NumberOfClasses, NumberOfJavaFiles)
+from java_stats.parser import parse_java_files
 
 
 class JavaStats:
@@ -25,20 +23,21 @@ class JavaStats:
     def __init__(self, repo_path: str):
         """
         Initialize the JavaStats object.
-
-        Args:
-            repo_path: Path to the repository
         """
         self.repo_path = repo_path
-        self.files = [
-            ParsedFile(path) for path in Path(self.repo_path).glob("**/*.java")
-        ]
+        self.files = parse_java_files(self.repo_path)
 
         metrics = {
             "NUMBER_OF_JAVA_FILES": NumberOfJavaFiles,
             "NUMBER_OF_CLASSES": NumberOfClasses,
             "AVERAGE_NUMBER_OF_METHODS_PER_CLASS": AverageNumberOfMethodsPerClass,
             "MAXIMUM_NUMBER_OF_METHODS_PER_CLASS": MaximumNumberOfMethodsPerClass,
+            "AVERAGE_CYCLOMATIC_COMPLEXITY": AverageCyclomaticComplexity,
+            "MAXIMUM_CYCLOMATIC_COMPLEXITY": MaximumCyclomaticComplexity,
+            "AVERAGE_LINES_OF_CODE": AverageLinesOfCode,
+            "MAXIMUM_LINES_OF_CODE": MaximumLinesOfCode,
+            "MAXIMUM_DEPTH_OF_INHERITANCE": MaximumDepthOfInheritance,
+            "AVERAGE_DEPTH_OF_INHERITANCE": AverageDepthOfInheritance,
         }
 
         self.metrics = {name: metric_class() for name, metric_class in metrics.items()}
@@ -74,7 +73,7 @@ class JavaStats:
         for metric_name in self.metrics:
             metric_elem = ET.SubElement(metrics_elem, "metric")
             metric_elem.set("name", metric_name)
-            metric_elem.text = str(self.metric(metric_name))
+            metric_elem.text = str(format(self.metric(metric_name), ".2f"))
 
         ET.indent(root)
         return ET.tostring(root, encoding="unicode", method="xml")

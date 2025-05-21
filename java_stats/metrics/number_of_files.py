@@ -3,8 +3,9 @@ Module for the number of files metric.
 """
 
 from typing import List
-from src.metrics.metric import Metric
-from src.parser import ParsedFile
+
+from ..parser import ParsedFile
+from .metric import Metric
 
 
 class NumberOfJavaFiles(Metric):
