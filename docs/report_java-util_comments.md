@@ -1,4 +1,4 @@
-Report for java-util repository:
+Report for [java-util](https://github.com/jdereg/java-util) repository:
 
 1. **Files and Classes:**
 - The repository contains 193 Java files, each strictly following the "one class per file" convention.
