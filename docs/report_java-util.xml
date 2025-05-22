@@ -1,0 +1,16 @@
+<report>
+  <report-time>22.05.2025</report-time>
+  <repository-path>../java-util</repository-path>
+  <metrics>
+    <metric name="NUMBER_OF_JAVA_FILES">193.00</metric>
+    <metric name="NUMBER_OF_CLASSES">193.00</metric>
+    <metric name="AVERAGE_NUMBER_OF_METHODS_PER_CLASS">10.18</metric>
+    <metric name="MAXIMUM_NUMBER_OF_METHODS_PER_CLASS">344.00</metric>
+    <metric name="AVERAGE_CYCLOMATIC_COMPLEXITY">1.71</metric>
+    <metric name="MAXIMUM_CYCLOMATIC_COMPLEXITY">51.00</metric>
+    <metric name="AVERAGE_LINES_OF_CODE">19.58</metric>
+    <metric name="MAXIMUM_LINES_OF_CODE">2175.00</metric>
+    <metric name="MAXIMUM_DEPTH_OF_INHERITANCE">3.00</metric>
+    <metric name="AVERAGE_DEPTH_OF_INHERITANCE">1.16</metric>
+  </metrics>
+</report>
