@@ -1,0 +1,4 @@
+click>=8.0.0
+pytest>=7.0.0
+pylint>=3.0.0
+javalang>=0.13.0
