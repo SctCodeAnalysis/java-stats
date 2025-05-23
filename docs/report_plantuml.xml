@@ -1,0 +1,16 @@
+<report>
+  <report-time>22.05.2025</report-time>
+  <repository-path>../plantuml</repository-path>
+  <metrics>
+    <metric name="NUMBER_OF_JAVA_FILES">3405.00</metric>
+    <metric name="NUMBER_OF_CLASSES">3405.00</metric>
+    <metric name="AVERAGE_NUMBER_OF_METHODS_PER_CLASS">5.81</metric>
+    <metric name="MAXIMUM_NUMBER_OF_METHODS_PER_CLASS">269.00</metric>
+    <metric name="AVERAGE_CYCLOMATIC_COMPLEXITY">2.19</metric>
+    <metric name="MAXIMUM_CYCLOMATIC_COMPLEXITY">116.00</metric>
+    <metric name="AVERAGE_LINES_OF_CODE">2.20</metric>
+    <metric name="MAXIMUM_LINES_OF_CODE">67.00</metric>
+    <metric name="MAXIMUM_DEPTH_OF_INHERITANCE">7.00</metric>
+    <metric name="AVERAGE_DEPTH_OF_INHERITANCE">1.65</metric>
+  </metrics>
+</report>
